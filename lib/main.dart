@@ -15,19 +15,29 @@ class MyApp extends StatelessWidget {
       width: 0,
       height: 0,
       effects: [
-        ELightning(
-            ERelativePos(0.5, 0),
-            0.02,
-            ERelative(1, ERelative.absolute),
-            ERelative(20, ERelative.absolute),
-            ERelative(600, ERelative.absolute),
-            50,
-            5,
-            EColorShift([Color.fromARGB(255, 80, 0, 255)], 0),
-            true,
-            8,
+        EFire(
+            EGradient([
+              EColorShift([Colors.red], 0),
+              EColorShift([Colors.orange.shade800], 0),
+              EColorShift([Colors.orange.shade600], 0)
+            ]),
+            EGradient([
+              EColorShift([Color.fromARGB(10, 100, 100, 100)], 0)
+            ]),
+            EGradient([
+              EColorShift([Color.fromARGB(20, 140, 100, 60)], 0),
+              EColorShift([Color.fromARGB(10, 140, 100, 60)], 0)
+            ]),
             1,
-            name: "Example Lightning"),
+            0,
+            ERelativePos(0.5, 0.5),
+            EVector2D(0, -1),
+            ERelative(30, ERelative.absolute),
+            ERelative(40, ERelative.absolute),
+            ERelative(2, ERelative.absolute),
+            ERelative(40, ERelative.absolute),
+            ERelative(150, ERelative.absolute),
+            ERelative(8, ERelative.absolute)),
       ],
       darkness: EColorShift([Color.fromARGB(255, 0, 0, 0)], 0),
       afterUpdate: () {},
@@ -40,20 +50,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(body: LayoutBuilder(builder: (context, size) {
       scene!.resize(size.biggest.width, size.biggest.height);
-      return GestureDetector(
+      return Container(
         child: scene,
-        onTapDown: (TapDownDetails tapDownDetails) {
-          EEffect effect = scene!.getEffect("Example Lightning")!;
-          if (effect is ELightning) {
-            ELightning ourLightning = effect;
-            ourLightning.buildLightningOnNextTickATTarget(ERelativePair(
-                ERelative(tapDownDetails.globalPosition.dx, ERelative.absolute),
-                ERelative(
-                    tapDownDetails.globalPosition.dy, ERelative.absolute)));
-
-            ourLightning.fireLightningIn(1);
-          }
-        },
       );
     })));
   }
