@@ -1,72 +1,111 @@
+
+import 'package:eeffects/eeffects.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  EScene? scene;
 
-  // This widget is the root of your application.
+  MyApp() {
+    scene = EScene(
+      width: 0,
+      height: 0,
+      effects: [
+        ERadialLight(
+            ERelativePos(0.3, 0.1),
+            ERelative(100, ERelative.absolute),
+            EGradient([
+              EColorShift([Color.fromARGB(150, 255, 255, 255)], 0)
+            ]),
+            0,
+            0,
+            ERelative(30, ERelative.absolute),
+            ERelative(2, ERelative.absolute),
+            0.1,
+            1),
+        ELightBeam(
+            ERelativePos(0.5, 0.5),
+            EVector2D(1, 0),
+            ERelative(0.6, ERelative.widthAndHeightRelative),
+            ERelative(10, ERelative.absolute),
+            ERelative(0, ERelative.absolute),
+            EGradient([
+              EColorShift([Color.fromARGB(150, 255, 255, 255)], 0),
+            ]),
+            1,
+            0,
+            ERelative(100, ERelative.absolute),
+            ERelative(2, ERelative.absolute),
+            0.1,
+            1,
+            name: "Example Beam")
+      ],
+      darkness: EColorShift([Color.fromARGB(255, 0, 0, 0)], 0),
+      afterUpdate: () {
+        EEffect effect = scene!.getEffect("Example Beam")!;
+        if (effect is ELightBeam) {
+          ELightBeam ourLightBeam = effect;
+          //equivalent to mousePos - ourLightBeam.direction
+          EVector2D newDirection = mousePos.getAdd(ourLightBeam.position
+              .getAbsolutePair(Size(scene!.width, scene!.height))
+              .getMultiply(-1));
+          ourLightBeam.direction = newDirection;
+        }
+      },
+      beforeUpdate: () {},
+    );
+  }
+
+  EVector2D mousePos = EVector2D(0, 0);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+        home: Scaffold(body: LayoutBuilder(builder: (context, size) {
+      scene!.resize(size.biggest.width, size.biggest.height);
+      return MouseRegion(
+        child: Stack(
+          children: [
+            Container(
+              width: 600,
+              height: 100,
+              color: Colors.pink,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Positioned(
+                width: 200,
+                height: 200,
+                top: 800,
+                left: 100,
+                child: Container(
+                  color: Colors.red,
+                )),
+            Positioned(
+                width: 400,
+                height: 400,
+                top: 800,
+                left: 800,
+                child: Container(
+                  color: Colors.blue,
+                )),
+            Positioned(
+                width: 300,
+                height: 300,
+                top: 200,
+                left: 1700,
+                child: Container(color: Colors.black)),
+            Container(
+              child: scene,
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        onHover: (PointerHoverEvent pointerHoverEvent) {
+          mousePos = EVector2D(
+              pointerHoverEvent.position.dx, pointerHoverEvent.position.dy);
+        },
+      );
+    })));
   }
 }
