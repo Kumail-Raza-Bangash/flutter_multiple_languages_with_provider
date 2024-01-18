@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_multiple_languages/provider/language_provider.dart';
+import 'package:flutter_multiple_languages/screens/home_page.dart';
 import 'package:flutter_multiple_languages/utils/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -27,10 +28,19 @@ class _LanguageSelectorState extends State<LanguageSelector> {
           'Languages',
           style: TextStyle(color: Colors.white),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.check, color: Colors.white),
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                // Navigate to the HomePage when the icon is clicked
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: const Icon(Icons.check, color: Colors.white),
+            ),
           ),
         ],
       ),

@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Padding(
               padding: EdgeInsets.all(16.0),
-              child: Text("Flutter splash screen uses the video as a background [Provider State Management]"),
+              child: Text("[FLUTTER MULTIPLE LANGUAGES]"),
             ),
   
 
