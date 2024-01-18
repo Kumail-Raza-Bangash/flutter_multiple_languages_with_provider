@@ -10,9 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => LanguageProvider(),
-      child: MaterialApp(
+      child: const MaterialApp(
         home: Scaffold(
-          appBar: AppBar(title: Text('Language')),
           body: LanguageSelector(),
         ),
       ),
