@@ -1,16 +1,9 @@
 # flutter_multiple_languages
 
-A new Flutter project.
+The "flutter_multiple_languages" project is a Flutter application that leverages the Provider state management library for efficient state handling. Additionally, the project incorporates custom color schemes to enhance the visual aesthetics of the user interface. By combining Provider for state management and custom colors, the application aims to deliver a dynamic and visually appealing user experience while efficiently managing the state across different components within the Flutter app.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Screen Shots
+![flutter multiple language](https://github.com/Kumail-Raza-Bangash/flutter_multiple_languages/assets/60749099/b3dcbabc-ec66-480d-a740-cd91b67d1182)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
