@@ -4,6 +4,6 @@ The "flutter_multiple_languages" project is a Flutter application that leverages
 
 
 ## Screen Shots
-![flutter multiple language](https://github.com/Kumail-Raza-Bangash/flutter_multiple_languages/assets/60749099/e68071ce-49ff-447b-850f-9a791fbe4167)
+![flutter multiple language](https://github.com/Kumail-Raza-Bangash/flutter_multiple_languages/assets/60749099/b3dcbabc-ec66-480d-a740-cd91b67d1182)
 
 
