@@ -19,7 +19,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
       appBar: AppBar(
         backgroundColor: Colors.transparent, // Set background color to transparent
         flexibleSpace: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: AppColors.gradientBackground, // Use the gradient from your AppColors class
           ),
         ),

@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_multiple_languages/model/language_model.dart';
 
 class LanguageProvider with ChangeNotifier {
-  List<Language> languages = [
-    Language('हिंदी', 'hi', false),
-    Language('اردو', 'ur', false),
-    Language('English', 'en', false), 
-    Language('हिंदी', 'hi', false),
-    Language('اردو', 'ur', false),
-    // Add other languages here
-    // ...
+  List<Language> languages = [    
     Language('English', 'en', true), 
+    Language('اردو', 'ur', false),
+    Language('française', 'fr', false),
+    Language('한국어', 'ko', false),
+    Language('हिंदी', 'hi', false),
+    Language('español', 'sp', false),
     
    ];
 
