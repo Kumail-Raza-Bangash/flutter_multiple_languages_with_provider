@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_multiple_languages/provider/language_provider.dart';
+import 'package:flutter_multiple_languages/utils/colors.dart';
 import 'package:provider/provider.dart';
 
 class LanguageSelector extends StatefulWidget {
@@ -16,11 +17,16 @@ class _LanguageSelectorState extends State<LanguageSelector> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent, // Set background color to transparent
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: AppColors.gradientBackground, // Use the gradient from your AppColors class
+          ),
+        ),
         title: const Text(
           'Languages',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.orange,
         actions: const [
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -83,7 +89,6 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                                   : Colors.grey,
                               width: language.isSelected ? 2.5 : 1.5,
                             ),
-                           
                           ),
                           child: Center(
                             child: language.isSelected
