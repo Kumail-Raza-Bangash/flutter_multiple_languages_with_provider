@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_multiple_languages/l10n/l10n.dart';
-import 'package:flutter_multiple_languages/provider/locale_provider.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_multiple_languages/l10n/l10n.dart';
+// import 'package:flutter_multiple_languages/provider/locale_provider.dart';
 import 'package:flutter_multiple_languages/utils/btn_color.dart';
 
 class HomePage extends StatefulWidget {
