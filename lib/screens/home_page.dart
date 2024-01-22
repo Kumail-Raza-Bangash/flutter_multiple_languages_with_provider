@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_multiple_languages/provider/language_provider.dart';
 import 'package:flutter_multiple_languages/utils/btn_color.dart';
+import 'package:flutter_multiple_languages/utils/colors.dart';
 import 'package:provider/provider.dart'; // Import the AppLocalizations
 
 class HomePage extends StatefulWidget {
@@ -18,7 +19,31 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-         title: Text(AppLocalizations.of(context)!.app_title),
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: AppColors.gradientBackground,
+          ),
+        ),
+        title: Text(
+          AppLocalizations.of(context)!.app_title,
+          style: TextStyle(color: Colors.white),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () {
+                // Navigate to the HomePage when the check icon is clicked
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const IntroScreen()),
+                // );
+              },
+              child: const Icon(Icons.settings, color: Colors.white),
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Consumer<LanguageProvider>(
