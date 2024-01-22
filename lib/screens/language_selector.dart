@@ -18,10 +18,10 @@ class _LanguageSelectorState extends State<LanguageSelector> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Set background color to transparent
+        backgroundColor: Colors.transparent,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: AppColors.gradientBackground, // Use the gradient from your AppColors class
+            gradient: AppColors.gradientBackground,
           ),
         ),
         title: const Text(
@@ -33,7 +33,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
               onTap: () {
-                // Navigate to the HomePage when the icon is clicked
+                // Navigate to the HomePage when the check icon is clicked
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const IntroScreen()),
@@ -64,7 +64,6 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Left side with flag and text
                         Row(
                           children: [
                             Container(
@@ -87,7 +86,6 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                             Text(language.name),
                           ],
                         ),
-                        // Right side with circle icon
                         Container(
                           width: 24,
                           height: 24,
@@ -108,7 +106,12 @@ class _LanguageSelectorState extends State<LanguageSelector> {
                         ),
                       ],
                     ),
-                    onTap: () => languageProvider.selectLanguage(language),
+                    onTap: () {
+                      languageProvider.selectLanguage(language);
+                      languageProvider.setLocale(Locale(language.code));
+                      // Navigate to the HomePage after selecting the language
+                      
+                    },
                   ),
                 ),
               ),

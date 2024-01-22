@@ -3,7 +3,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_multiple_languages/l10n/l10n.dart';
 import 'package:flutter_multiple_languages/provider/language_provider.dart';
-import 'package:flutter_multiple_languages/provider/locale_provider.dart';
 import 'package:flutter_multiple_languages/provider/page_provider.dart';
 import 'package:flutter_multiple_languages/provider/splash_screen_provider.dart';
 import 'package:flutter_multiple_languages/screens/splash_screen.dart';
@@ -25,11 +24,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => SplashProvider(),),
         ChangeNotifierProvider(create: (context) => LanguageProvider(),),
         ChangeNotifierProvider(create: (context) => PageProvider(),),
-        ChangeNotifierProvider(create: (context) => LocaleProvider(),),
         // Add more providers if needed
       ],
 
-      child: Consumer<LocaleProvider>(
+      child: Consumer<LanguageProvider>(
         builder: (context, provider, snapshot) {
        return MaterialApp(
         debugShowCheckedModeBanner: false,
