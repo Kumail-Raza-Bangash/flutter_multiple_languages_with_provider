@@ -5,7 +5,7 @@ import 'dart:ui';
     Locale('es'),
     Locale('hi'),
     Locale('fr'),
-    Locale('ur'),
+    Locale('zh'),
     Locale('ko'),
   ];
  }

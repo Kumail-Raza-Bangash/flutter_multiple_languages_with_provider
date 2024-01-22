@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         ),
         title: Text(
           AppLocalizations.of(context)!.app_title,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         actions: [
           Padding(

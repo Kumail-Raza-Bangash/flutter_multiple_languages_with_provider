@@ -17,7 +17,7 @@ class LanguageProvider with ChangeNotifier {
   }
   
   List<Language> languages = [  
-    Language('中国人', 'ch', false),  
+    Language('中国人', 'zh', false),  
     Language('English', 'en', true), 
     Language('française', 'fr', false),
     Language('한국어', 'ko', false),
