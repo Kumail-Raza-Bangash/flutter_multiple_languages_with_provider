@@ -16,13 +16,13 @@ class LanguageProvider with ChangeNotifier {
     
   }
   
-  List<Language> languages = [    
+  List<Language> languages = [  
+    Language('中国人', 'ch', false),  
     Language('English', 'en', true), 
-    Language('中国人', 'ch', false),
     Language('française', 'fr', false),
     Language('한국어', 'ko', false),
     Language('हिंदी', 'hi', false),
-    Language('español', 'sp', false),
+    Language('español', 'es', false),
     
    ];
 
