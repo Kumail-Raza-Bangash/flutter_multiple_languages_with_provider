@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         builder: (context, provider, snapshot) {
        return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Fluid Wallpaper',
+        title: 'Flutter Multiple Language With Provider',
         home: const LanguageSelector(),
         locale: provider.locale,
         supportedLocales: L10n.all,
