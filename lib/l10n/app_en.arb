@@ -1,5 +1,13 @@
 {
   "app_title": "English Language",
   "details": "This is details for the ENGLISH Language.",
-  "hello_world": "Hello World "
+  "hello_world": "Hello World ",
+  "next": "Next",
+  "onboard_description1": "Experience the beauty of dynamic fluid live wallpapers that respond to your touch. Transform your device into a mesmerizing liquid canvas",
+  "onboard_description2": "Personalize your live wallpaper by choosing from a variety of fluid designs, colors, and patterns. Swipe, pinch, and interact with the fluid elements to create a wallpaper that reflects your style",
+  "onboard_description3": "Watch as fluid dynamics come to life on your screen. Set the mood with calming waves, vibrant ripples, or energetic flows. Make your device an artistic masterpiece with our fluid live wallpapers",
+  "onboard_title1": "Welcome to Fluid Wallpaper",
+  "onboard_title2": "Customize Your Fluid Experience",
+  "onboard_title3": "Set the Mood with Fluid Motion",
+  "skip": "Skip"
 }

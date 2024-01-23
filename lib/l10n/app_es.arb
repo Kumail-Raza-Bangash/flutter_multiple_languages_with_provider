@@ -1,5 +1,13 @@
 {
   "app_title": "Lengua española",
   "details": " Estos son detalles para el idioma ESPAÑOL",
-  "hello_world": "Hola Mundo"
+  "hello_world": "Hola Mundo",
+  "next": "Próxima",
+  "onboard_description1": "Experimente la belleza de los fondos de pantalla dinámicos y fluidos que responden a su toque. Transforma tu dispositivo en un fascinante lienzo líquido",
+  "onboard_description2": "Personalice su fondo de pantalla en vivo eligiendo entre una variedad de diseños, colores y patrones fluidos. Desliza, pellizca e interactúa con los elementos fluidos para crear un fondo de pantalla que refleje tu estilo",
+  "onboard_description3": "Observe cómo la dinámica de fluidos cobra vida en su pantalla. Crea el ambiente con olas relajantes, ondas vibrantes o flujos energéticos. Convierte tu dispositivo en una obra maestra artística con nuestros fluidos fondos de pantalla en vivo",
+  "onboard_title1": "Bienvenido a Fondo de pantalla fluido",
+  "onboard_title2": "Personalice su experiencia con fluidos",
+  "onboard_title3": "Crea el ambiente con movimiento fluido",
+  "skip": "Saltar"
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_multiple_languages/onboarding/intro_component1.dart';
 import 'package:flutter_multiple_languages/provider/page_provider.dart';
 import 'package:flutter_multiple_languages/screens/home_page.dart';
@@ -6,9 +7,14 @@ import 'package:flutter_multiple_languages/utils/btn_color.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class IntroScreen extends StatelessWidget {
+class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key,});
 
+  @override
+  State<IntroScreen> createState() => _IntroScreenState();
+}
+
+class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController();
@@ -21,24 +27,24 @@ class IntroScreen extends StatelessWidget {
         children: [
           PageView(
             controller: controller,
-            children: const [
+            children: [
               IntroComponent(
                 image: 'lib/assets/images/ob1.png',
-                bgColor: Color.fromARGB(255, 255, 255, 255),
-                promoText: 'Screen 1',
-                additionalText1: "additionalText1",
+                bgColor: const Color.fromARGB(255, 255, 255, 255),
+                promoText: AppLocalizations.of(context)!.onboard_title1,
+                additionalText1: AppLocalizations.of(context)!.onboard_description1,
               ),
               IntroComponent(
                 image: 'lib/assets/images/ob2.png',
-                bgColor: Color.fromARGB(255, 255, 255, 255),
-                promoText: 'Screen 2',
-                additionalText1: "additionalText1",
+                bgColor: const Color.fromARGB(255, 255, 255, 255),
+                promoText:  AppLocalizations.of(context)!.onboard_title2,
+                additionalText1: AppLocalizations.of(context)!.onboard_description2,
               ),
               IntroComponent(
                 image: 'lib/assets/images/ob3.png',
-                bgColor: Color.fromARGB(255, 255, 255, 255),
-                promoText: 'Screen 3',
-                additionalText1: "additionalText1",
+                bgColor: const Color.fromARGB(255, 255, 255, 255),
+                promoText:  AppLocalizations.of(context)!.onboard_title3,
+                additionalText1: AppLocalizations.of(context)!.onboard_description3,
               ),
             ],
           ),
@@ -64,7 +70,7 @@ class IntroScreen extends StatelessWidget {
                   );
                 }
               },
-              text: 'Next',
+              text: AppLocalizations.of(context)!.next,
             ),
           ),
           Positioned(
@@ -97,9 +103,9 @@ class IntroScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const HomePage()),
                 );
               },
-              child: const Text(
-                'Skip',
-                style: TextStyle(color: Colors.grey, fontSize: 16, fontStyle: FontStyle.italic),
+              child: Text(
+                AppLocalizations.of(context)!.skip,
+                style: const TextStyle(color: Colors.grey, fontSize: 16, fontStyle: FontStyle.italic),
               ),
             ),
           ),

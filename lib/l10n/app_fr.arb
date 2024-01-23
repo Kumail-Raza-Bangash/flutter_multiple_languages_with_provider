@@ -1,5 +1,13 @@
 {
   "app_title": "langue française",
   "details": "Ce sont des détails pour la langue FRANÇAISE.",
-  "hello_world": "Bonjour le monde"
+  "hello_world": "Bonjour le monde",
+  "next": "Suivante",
+  "onboard_description1": "Découvrez la beauté des fonds d'écran animés fluides et dynamiques qui répondent à votre toucher. Transformez votre appareil en une toile liquide fascinante",
+  "onboard_description2": "Personnalisez votre fond d'écran animé en choisissant parmi une variété de designs, de couleurs et de motifs fluides. Glissez, pincez et interagissez avec les éléments fluides pour créer un fond d'écran qui reflète votre style",
+  "onboard_description3": "Regardez la dynamique des fluides prendre vie sur votre écran. Créez l’ambiance avec des vagues apaisantes, des ondulations vibrantes ou des flux énergétiques. Faites de votre appareil un chef-d'œuvre artistique avec nos fonds d'écran animés fluides",
+  "onboard_title1": "Bienvenue sur Fond d'écran Fluide",
+  "onboard_title2": "Personnalisez votre expérience fluide",
+  "onboard_title3": "Créez l’ambiance avec Fluid Motion",
+  "skip": "Sauter"
 }
