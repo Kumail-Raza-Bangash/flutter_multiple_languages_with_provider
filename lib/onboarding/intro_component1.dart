@@ -81,13 +81,16 @@ class _IntroComponentState extends State<IntroComponent> {
         ),
     
         //Text 2
-        Text(
-          widget.additionalText1,
-          style: GoogleFonts.poppins(
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-                color: Colors.grey, // Text color
-              ),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            widget.additionalText1,
+            style: GoogleFonts.poppins(
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.grey, // Text color
+                ),
+          ),
         ),
       ],
     );

@@ -4,8 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_multiple_languages/l10n/l10n.dart';
 import 'package:flutter_multiple_languages/provider/language_provider.dart';
 import 'package:flutter_multiple_languages/provider/page_provider.dart';
-import 'package:flutter_multiple_languages/provider/splash_screen_provider.dart';
-import 'package:flutter_multiple_languages/screens/splash_screen.dart';
+import 'package:flutter_multiple_languages/screens/language_selector.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => SplashProvider(),),
         ChangeNotifierProvider(create: (context) => LanguageProvider(),),
         ChangeNotifierProvider(create: (context) => PageProvider(),),
         // Add more providers if needed
@@ -32,7 +30,7 @@ class MyApp extends StatelessWidget {
        return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Fluid Wallpaper',
-        home: const SplashPage(),
+        home: const LanguageSelector(),
         locale: provider.locale,
         supportedLocales: L10n.all,
         localizationsDelegates: const [
