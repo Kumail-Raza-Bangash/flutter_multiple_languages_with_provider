@@ -5,5 +5,5 @@ The "flutter_multiple_languages" project is a Flutter application that leverages
 
 ## Video
 
-https://github.com/Kumail-Raza-Bangash/flutter_multiple_languages_with_provider/assets/60749099/ba57b3bd-527c-441e-b746-aece2067fd92
+https://github.com/Kumail-Raza-Bangash/flutter_multiple_languages_with_provider/assets/60749099/83909f57-7cf2-4f9d-879e-90c7239b0a92
 
